@@ -1,0 +1,10 @@
+[2025-03-03 21:14:27] Ajout - Reclamation ajouté: Bnsr
+[2025-03-03 21:15:31] Modification - Reclamation modifié: Reclamation (ID: 82)
+[2025-03-03 21:16:00] Suppression - Reclamation supprimé (Sujet: Reclamation)
+[2025-03-03 21:25:14] Ajout - Reponse Ajouter: 83 Reclamation bnjrr est En Cours
+[2025-03-03 21:27:23] Ajout - Reponse Modifier: 83 Reclamation bnjrr est Traitée
+[2025-03-03 21:27:39] Suppression - Reclamation supprimer (Sujet: bnjrr)
+[2025-03-03 21:54:04] Ajout - Reclamation ajouter: saha
+[2025-03-03 21:54:36] Ajout - Reponse Ajouter : Reclamation hahahhahaha est En Cours
+[2025-03-03 21:56:01] Suppression - Reclamation supprimer (Sujet: saha)
+[2025-03-03 21:56:08] Suppression - Reclamation supprimer (Sujet: hahahhahaha)

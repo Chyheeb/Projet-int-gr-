@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="750.0" stylesheets="Reclamtion.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReclamationController">
+
+    <children>
+
+        <!-- Barre latérale -->
+        <VBox layoutY="0" prefHeight="569.0" prefWidth="204.0" style="-fx-background-color: #343A40;">
+            <children>
+                <HBox prefHeight="129.0" prefWidth="202.0">
+                    <children>
+                        <ImageView fitHeight="197.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/logo.png" />
+                     </image></ImageView>
+                    </children>
+                </HBox>
+                <Button onAction="#AfficherPaneAjout" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Ajouter" textFill="#d5b2d6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+                </Button>
+                <Button onAction="#AfficherPaneUpdate" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Modifier" textFill="#d5b2d6">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            <Button onAction="#AfficherPaneAffichage" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Afficher" textFill="#d5b2d6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+
+            </children>
+        </VBox>
+        <!-- HBox en haut de la fenêtre -->
+        <HBox layoutX="0" layoutY="0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #00000; -fx-padding: 10px;">
+
+            <children>
+                <Region prefWidth="220" /> <!-- Ajuste l'espace pour aligner le texte à gauche -->
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="168.0" text="DashBoard" textFill="#6cb2eb">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="19.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <!-- Pane Ajout -->
+        <Pane fx:id="paneAjout" layoutX="192.0" layoutY="68.0" prefHeight="400.0" prefWidth="550.0">
+            <children>
+                <Label layoutX="190.0" layoutY="92.0" prefHeight="27.0" prefWidth="200.0" style="-fx-font-size: 18px;" text="Ajouter Une Reclamation" textFill="#0056b3">
+                    <font>
+                        <Font name="Cambria Bold Italic" size="19.0" />
+                    </font>
+                </Label>
+                <Button layoutX="199.0" layoutY="297.0" mnemonicParsing="false" onAction="#AjouterReclamation" prefHeight="25.0" prefWidth="183.0" text="Ajouter" textFill="#0056b3" />
+                <TextField fx:id="tf_sujet" layoutX="290.0" layoutY="152.0" prefHeight="25.0" prefWidth="183.0" promptText="Entrez le Sujet" />
+                <TextField fx:id="tf_description" layoutX="290.0" layoutY="195.0" prefHeight="25.0" prefWidth="183.0" promptText="Entrez le Description" />
+                <Text fill="#9b59b6" layoutX="141.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet :" wrappingWidth="99.7366943359375" />
+                <Text fill="#9b59b6" layoutX="141.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :" wrappingWidth="99.7366943359375" />
+                <Text fill="#9b59b6" layoutX="141.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type_reclamation :" wrappingWidth="99.7366943359375" />
+                <ComboBox fx:id="tf_type" layoutX="290.0" layoutY="237.0" prefHeight="25.0" prefWidth="183.0" />
+            </children>
+        </Pane>
+
+        <!-- Pane update -->
+        <Pane fx:id="paneModifier" layoutX="180.0" layoutY="50.0" prefHeight="400.0" prefWidth="550.0" visible="false">
+            <children>
+                <Label layoutX="202.0" layoutY="115.0" style="-fx-font-size: 18px;" text="Modifier Une Reclamation" textFill="#0056b3" />
+                <Text fill="#9b59b6" layoutX="152.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet :" wrappingWidth="74.13671875" />
+                <Text fill="#9b59b6" layoutX="152.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type_Reclamation" wrappingWidth="99.7366943359375" />
+                <Button layoutX="209.0" layoutY="318.0" mnemonicParsing="false" onAction="#ModifierReclamation" prefHeight="25.0" prefWidth="183.0" text="Modifier" textFill="#0056b3" />
+                <ComboBox fx:id="tf_type1" layoutX="306.0" layoutY="258.0" prefHeight="25.0" prefWidth="183.0" />
+                <TextField fx:id="tf_description1" layoutX="306.0" layoutY="215.0" prefHeight="25.0" prefWidth="183.0" promptText="Entrez le Description" />
+                <TextField fx:id="tf_sujet1" layoutX="306.0" layoutY="167.0" prefHeight="25.0" prefWidth="183.0" promptText="Entrez le Sujet" />
+                <Text fill="#9b59b6" layoutX="152.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description : " wrappingWidth="74.13671875" />
+            </children>
+        </Pane>
+
+        <!-- Pane affichage -->
+        <Pane fx:id="paneAffichage" layoutX="202.0" layoutY="44.0" prefHeight="525.0" prefWidth="550.0" visible="false">
+            <children>
+
+                <ListView fx:id="lv_reclamation" layoutX="14.0" layoutY="38.0" prefHeight="406.0" prefWidth="526.0" />
+
+                <Button layoutX="42.0" layoutY="468.0" mnemonicParsing="false" onAction="#SupprimerReclamation" prefHeight="30.0" prefWidth="116.0" text="Supprimer" textFill="#0056b3">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="217.0" layoutY="468.0" mnemonicParsing="false" onAction="#PreparerModification" prefHeight="30.0" prefWidth="116.0" text="Modifier" textFill="#9b59b6">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            <Button layoutX="384.0" layoutY="468.0" mnemonicParsing="false" onAction="#AfficherReponse" prefHeight="30.0" prefWidth="116.0" text="Afficher" textFill="#343a40">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="158.0" layoutY="11.0" prefHeight="27.0" prefWidth="200.0" style="-fx-font-size: 18px;" text="Liste des Reclamations" textFill="#0056b3">
+               <font>
+                  <Font name="Cambria Bold Italic" size="19.0" />
+               </font>
+            </Label>
+
+            </children>
+        </Pane>
+      <Pane fx:id="paneAffichage1" layoutX="202.0" layoutY="51.0" prefHeight="512.0" prefWidth="550.0" visible="false">
+         <children>
+            <ListView fx:id="lv_reponse" layoutX="6.0" layoutY="48.0" prefHeight="394.0" prefWidth="537.0" />
+            <Label layoutX="175.0" layoutY="-13.0" prefHeight="27.0" prefWidth="200.0" style="-fx-font-size: 18px;" text="List des Reponses" textFill="#0056b3" visible="false">
+               <font>
+                  <Font name="Cambria Bold Italic" size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="208.0" layoutY="461.0" mnemonicParsing="false" onAction="#RetourAuList" prefHeight="25.0" prefWidth="135.0" text="Retour" />
+            <Label layoutX="184.0" layoutY="15.0" prefHeight="27.0" prefWidth="200.0" style="-fx-font-size: 18px;" text="Liste des Reponses" textFill="#0056b3">
+               <font>
+                  <Font name="Cambria Bold Italic" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+
+
+    </children>
+</AnchorPane>

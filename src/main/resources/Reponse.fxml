@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="750.0" stylesheets="Reclamtion.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReponseController">
+    <children>
+
+      <!-- Barre latérale -->
+      <VBox layoutY="0" prefHeight="569.0" prefWidth="204.0" style="-fx-background-color: #343A40;">
+        <children>
+            <HBox prefHeight="129.0" prefWidth="202.0">
+                <children>
+                    <ImageView fitHeight="197.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@image/logo.png" />
+                        </image></ImageView>
+                </children>
+            </HBox>
+            <Button onAction="#AfficherPaneRepAjout" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Ajouter" textFill="#d5b2d6">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button onAction="#AfficherPaneRepModifier" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Modifier" textFill="#d5b2d6">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button onAction="#AfficherPaneRepAffichage" prefHeight="56.0" prefWidth="202.0" style="-fx-background-color: #343A40; -fx-border-color: #d5b2d6; -fx-border-width: 0PX 0PX 2PX 0PX;" text="Afficher" textFill="#d5b2d6">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+
+        </children>
+      </VBox>
+      <!-- HBox en haut de la fenêtre -->
+      <HBox layoutX="0" layoutY="0" prefHeight="50.0" prefWidth="750.0" style="-fx-background-color: #00000; -fx-padding: 10px;">
+
+        <children>
+            <Region prefWidth="220" /> <!-- Ajuste l'espace pour aligner le texte à gauche -->
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="168.0" text="DashBoard" textFill="#6cb2eb">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="19.0" />
+                </font>
+            </Label>
+        </children>
+    </HBox>
+
+    <!-- Pane Ajout -->
+        <Pane fx:id="paneRepAjout" layoutX="180.0" layoutY="50.0" prefHeight="500.0" prefWidth="555.0">
+            <children>
+                <Label layoutX="170.0" layoutY="30.0" style="-fx-font-size: 18px; -fx-text-fill: #0056b3;" text="Ajouter Une Réponse" />
+                <TextField fx:id="tf_rep_contenu" layoutX="203.0" layoutY="193.0" prefHeight="30.0" prefWidth="240.0" promptText="Contenu" />
+                <ComboBox fx:id="combo_rep_statut" layoutX="203.0" layoutY="261.0" prefHeight="30.0" prefWidth="240.0" />
+                <Button id="AjouterReponse" layoutX="241.0" layoutY="332.0" onAction="#AjouterReponse" prefHeight="30.0" prefWidth="150.0" text="Ajouter" />
+            <Text layoutX="63.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contenu :" wrappingWidth="106.93666076660156" />
+            <Text layoutX="63.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut:" wrappingWidth="106.93666076660156" />
+            <TextField fx:id="tf_rep_sujet" layoutX="203.0" layoutY="124.0" prefHeight="30.0" prefWidth="240.0" promptText="Sujet" />
+            <Text layoutX="63.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sujet :" wrappingWidth="106.93666076660156" />
+            </children>
+        </Pane>
+
+
+        <!-- Pane pour Modifier une Réponse -->
+        <Pane fx:id="paneRepModifier" layoutX="152.0" layoutY="45.0" prefHeight="510.0" prefWidth="597.0" visible="false">
+            <children>
+                <Label layoutX="227.0" layoutY="56.0" style="-fx-font-size: 18px; -fx-text-fill: #0056b3;" text="Modifier Une Réponse" />
+                <TextField fx:id="tf_rep_contenu_modif" layoutX="210.0" layoutY="152.0" prefHeight="30.0" prefWidth="240.0" promptText="Contenu" />
+                <ComboBox fx:id="combo_rep_statut_modif" layoutX="210.0" layoutY="225.0" prefHeight="30.0" prefWidth="240.0" promptText="Statut" />
+                <Button id="ModifierReponse" layoutX="270.0" layoutY="294.0" onAction="#ModifierReponse" prefHeight="30.0" prefWidth="120.0" text="Modifier" />
+            <Text layoutX="82.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contenu :" wrappingWidth="106.93666076660156" />
+            <Text layoutX="89.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut:" wrappingWidth="106.93666076660156" />
+            </children>
+        </Pane>
+
+        <!-- Pane pour Afficher la liste des Réponses -->
+        <Pane fx:id="paneRepAffichage" layoutX="210.0" layoutY="50.0" prefHeight="500.0" prefWidth="540.0" visible="false">
+            <children>
+                <Label layoutX="170.0" layoutY="30.0" style="-fx-font-size: 18px; -fx-text-fill: #0056b3;" text="Liste des Réponses" />
+                <ListView fx:id="lv_reponse" layoutX="20.0" layoutY="80.0" prefHeight="350.0" prefWidth="500.0" />
+                    <HBox layoutX="82.0" layoutY="445.0" spacing="20">
+                        <Button id="SupprimerReponse" onAction="#SupprimerReponse" prefWidth="120" text="Supprimer" />
+                        <Button onAction="#PreparerModificationRep" prefWidth="120" text="Modifier" />
+                        <Button onAction="#AfficherReclamation" prefWidth="120" text="Afficher" />
+                    </HBox>
+            </children>
+        </Pane>
+
+        <!-- Pane pour Afficher la liste des Réclamations -->
+        <Pane fx:id="paneRecAffichage" layoutX="188.0" layoutY="45.0" prefHeight="500.0" prefWidth="540.0" visible="false">
+            <children>
+            <Button layoutX="223.0" layoutY="451.0" mnemonicParsing="false" onAction="#RetourAuList" prefHeight="25.0" prefWidth="120.0" text="Retour" />
+                <Label layoutX="172.0" layoutY="14.0" style="-fx-font-size: 18px; -fx-text-fill: #0056b3;" text="Liste des Réclamations" />
+                <ListView fx:id="lv_reclamation" layoutX="33.0" layoutY="59.0" prefHeight="382.0" prefWidth="500.0" />
+            </children>
+        </Pane>
+    </children>
+
+</AnchorPane>
